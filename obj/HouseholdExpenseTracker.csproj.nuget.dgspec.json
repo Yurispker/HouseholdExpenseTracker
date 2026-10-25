@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\yuris\\Projects\\HouseholdExpenseTracker\\HouseholdExpenseTracker.csproj": {}
+    "C:\\Users\\yuris\\Projects\\HouseholdExpenseTracker\\HouseholdExpenseTracker.csproj": {}
   },
   "projects": {
-    "c:\\Users\\yuris\\Projects\\HouseholdExpenseTracker\\HouseholdExpenseTracker.csproj": {
+    "C:\\Users\\yuris\\Projects\\HouseholdExpenseTracker\\HouseholdExpenseTracker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\yuris\\Projects\\HouseholdExpenseTracker\\HouseholdExpenseTracker.csproj",
+        "projectUniqueName": "C:\\Users\\yuris\\Projects\\HouseholdExpenseTracker\\HouseholdExpenseTracker.csproj",
         "projectName": "HouseholdExpenseTracker",
-        "projectPath": "c:\\Users\\yuris\\Projects\\HouseholdExpenseTracker\\HouseholdExpenseTracker.csproj",
+        "projectPath": "C:\\Users\\yuris\\Projects\\HouseholdExpenseTracker\\HouseholdExpenseTracker.csproj",
         "packagesPath": "C:\\Users\\yuris\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\yuris\\Projects\\HouseholdExpenseTracker\\obj\\",
+        "outputPath": "C:\\Users\\yuris\\Projects\\HouseholdExpenseTracker\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\yuris\\AppData\\Roaming\\NuGet\\NuGet.Config"

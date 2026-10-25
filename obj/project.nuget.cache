@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LxqtoIhzvNA=",
+  "dgSpecHash": "D3SWvv5N6YI=",
   "success": true,
-  "projectFilePath": "c:\\Users\\yuris\\Projects\\HouseholdExpenseTracker\\HouseholdExpenseTracker.csproj",
+  "projectFilePath": "C:\\Users\\yuris\\Projects\\HouseholdExpenseTracker\\HouseholdExpenseTracker.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yuris\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\yuris\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.13\\microsoft.aspnetcore.app.internal.assets.10.0.13.nupkg.sha512",
