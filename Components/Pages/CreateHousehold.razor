@@ -1,0 +1,74 @@
+@page "/create-household"
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Identity
+@using HouseholdExpenseTracker.Data
+@using HouseholdExpenseTracker.Models
+@attribute [Authorize]
+@inject ApplicationDbContext DbContext
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager Navigation
+
+<h3>Create a Household</h3>
+
+@if (string.IsNullOrEmpty(SuccessMessage))
+{
+    <div class="mb-3">
+        <label class="form-label">Household Name</label>
+        <input class="form-control" @bind="HouseholdName" placeholder="e.g. Smith Family" />
+    </div>
+
+    <button class="btn btn-primary" @onclick="CreateHousehold">Create Household</button>
+}
+else
+{
+    <div class="alert alert-success">
+        @SuccessMessage
+    </div>
+}
+
+@code {
+    private string HouseholdName = string.Empty;
+    private string SuccessMessage = string.Empty;
+
+    private async Task CreateHousehold()
+    {
+        if (string.IsNullOrWhiteSpace(HouseholdName))
+        {
+            return;
+        }
+
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var userPrincipal = authState.User;
+        var userId = userPrincipal.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+
+        if (userId == null)
+        {
+            return;
+        }
+
+        var user = await DbContext.Users.FindAsync(userId);
+        if (user == null)
+        {
+            return;
+        }
+
+        var household = new Household
+        {
+            Name = HouseholdName,
+            InviteCode = GenerateInviteCode()
+        };
+
+        DbContext.Households.Add(household);
+        await DbContext.SaveChangesAsync();
+
+        user.HouseholdId = household.Id;
+        await DbContext.SaveChangesAsync();
+
+        SuccessMessage = $"Household '{household.Name}' created successfully! Invite code: {household.InviteCode}";
+    }
+
+    private string GenerateInviteCode()
+    {
+        return Guid.NewGuid().ToString("N").Substring(0, 6).ToUpper();
+    }
+}

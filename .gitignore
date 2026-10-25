@@ -1,0 +1,26 @@
+## .NET
+bin/
+obj/
+*.user
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## Visual Studio / VS Code
+.vs/
+.vscode/
+*.rsuser
+
+## Database
+*.db
+*.db-shm
+*.db-wal
+
+## User-specific
+appsettings.Development.json
+*.log
+
+## Windows
+Thumbs.db
+Desktop.ini
